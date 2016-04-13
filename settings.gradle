@@ -1,0 +1,4 @@
+rootProject.name = 'javacro-2016'
+
+include 'spring-boot-actuator'
+include 'spring-session'

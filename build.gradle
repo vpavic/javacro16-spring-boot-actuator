@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.BUILD-SNAPSHOT'
+	}
+
+	repositories {
+		jcenter()
+		maven { url 'http://repo.spring.io/libs-snapshot' }
+	}
+
+	dependencies {
+		classpath 'io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE'
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+	}
+}
+
+configure(subprojects) {
+	apply plugin: 'java'
+	apply plugin: 'spring-boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	project.sourceCompatibility = JavaVersion.VERSION_1_8
+
+	repositories {
+		jcenter()
+		maven { url 'http://repo.spring.io/libs-snapshot' }
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom 'io.spring.platform:platform-bom:2.1.0.BUILD-SNAPSHOT'
+		}
+	}
+
+	dependencies {
+		compile 'org.springframework.boot:spring-boot-starter-web'
+
+		compile 'com.h2database:h2'
+
+		testCompile 'org.springframework.boot:spring-boot-starter-test'
+	}
+
+	springBoot {
+		executable = true
+	}
+}
