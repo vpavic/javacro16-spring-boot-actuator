@@ -4,3 +4,7 @@ dependencies {
 
 	compile 'org.jolokia:jolokia-core'
 }
+
+processResources {
+	expand(project.properties)
+}
