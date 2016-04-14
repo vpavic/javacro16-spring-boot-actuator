@@ -1,3 +1,5 @@
+apply plugin: 'com.gorylenko.gradle-git-properties'
+
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
