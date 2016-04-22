@@ -47,8 +47,4 @@ configure(subprojects) {
 
 		testCompile 'org.springframework.boot:spring-boot-starter-test'
 	}
-
-	springBoot {
-		executable = true
-	}
 }

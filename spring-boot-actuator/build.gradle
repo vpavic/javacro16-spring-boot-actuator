@@ -10,3 +10,7 @@ dependencies {
 processResources {
 	expand(project.properties)
 }
+
+springBoot {
+	executable = true
+}
