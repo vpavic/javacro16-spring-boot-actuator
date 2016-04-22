@@ -2,3 +2,7 @@ spring:
   h2:
     console:
       enabled: true
+
+security:
+  user:
+    password: javacro

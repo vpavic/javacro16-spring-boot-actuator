@@ -3,6 +3,10 @@ spring:
     console:
       enabled: true
 
+security:
+  user:
+    password: javacro
+
 info:
   build:
     name: ${name}
