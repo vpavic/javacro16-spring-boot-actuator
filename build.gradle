@@ -16,35 +16,43 @@ buildscript {
 	}
 }
 
-configure(allprojects) {
-	version = '0.1.0'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.gorylenko.gradle-git-properties'
+
+project.sourceCompatibility = JavaVersion.VERSION_1_8
+
+version = '0.1.0'
+
+repositories {
+	jcenter()
+	maven { url 'http://repo.spring.io/libs-snapshot' }
 }
 
-configure(subprojects) {
-	apply plugin: 'java'
-	apply plugin: 'spring-boot'
-	apply plugin: 'io.spring.dependency-management'
-
-	project.sourceCompatibility = JavaVersion.VERSION_1_8
-
-	repositories {
-		jcenter()
-		maven { url 'http://repo.spring.io/libs-snapshot' }
+dependencyManagement {
+	imports {
+		mavenBom 'io.spring.platform:platform-bom:2.1.0.BUILD-SNAPSHOT'
 	}
+}
 
-	dependencyManagement {
-		imports {
-			mavenBom 'io.spring.platform:platform-bom:2.1.0.BUILD-SNAPSHOT'
-		}
-	}
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-hateoas'
+	compile 'org.springframework.boot:spring-boot-starter-actuator'
+	compile 'org.springframework.boot:spring-boot-starter-security'
+	compile 'org.springframework.boot:spring-boot-starter-jdbc'
 
-	dependencies {
-		compile 'org.springframework.boot:spring-boot-starter-web'
-		compile 'org.springframework.boot:spring-boot-starter-security'
-		compile 'org.springframework.boot:spring-boot-starter-jdbc'
+	compile 'com.h2database:h2'
+	compile 'org.jolokia:jolokia-core'
 
-		compile 'com.h2database:h2'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
 
-		testCompile 'org.springframework.boot:spring-boot-starter-test'
-	}
+processResources {
+	expand(project.properties)
+}
+
+springBoot {
+	executable = true
 }
