@@ -38,13 +38,23 @@ dependencyManagement {
 
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-web'
-	compile 'org.springframework.boot:spring-boot-starter-hateoas'
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-security'
-	compile 'org.springframework.boot:spring-boot-starter-jdbc'
 
+	// Hypermedia for actuator MVC endpoints
+	compile 'org.springframework.boot:spring-boot-starter-hateoas'
+	compile 'org.webjars:hal-browser'
+
+	// Embedded database
+	compile 'org.springframework.boot:spring-boot-starter-jdbc'
 	compile 'com.h2database:h2'
+
+	// Jolokia for JMX over HTTP
 	compile 'org.jolokia:jolokia-core'
+
+	// Monitoring and management using a remote shell
+	compile 'org.springframework.boot:spring-boot-starter-remote-shell'
+	compile 'org.codehaus.groovy:groovy'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -53,6 +63,6 @@ processResources {
 	expand(project.properties)
 }
 
-springBoot {
-	executable = true
-}
+//springBoot {
+//	executable = true
+//}
