@@ -3,6 +3,10 @@ spring:
     console:
       enabled: true
 
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
 security:
   user:
     password: javacro

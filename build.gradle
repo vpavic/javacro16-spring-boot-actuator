@@ -41,6 +41,8 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-security'
 
+	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
 	// Hypermedia for actuator MVC endpoints
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
 	compile 'org.webjars:hal-browser'
