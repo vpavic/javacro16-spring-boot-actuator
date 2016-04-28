@@ -1,16 +1,15 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.0.BUILD-SNAPSHOT'
+		springBootVersion = '1.4.0.M2'
 	}
 
 	repositories {
 		jcenter()
 		maven { url 'https://plugins.gradle.org/m2/' }
-		maven { url 'http://repo.spring.io/libs-snapshot' }
+		maven { url 'https://repo.spring.io/libs-milestone' }
 	}
 
 	dependencies {
-		classpath 'io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE'
 		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
 		classpath 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.16'
 	}
@@ -18,7 +17,6 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.gorylenko.gradle-git-properties'
 
 project.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -27,13 +25,7 @@ version = '0.1.0'
 
 repositories {
 	jcenter()
-	maven { url 'http://repo.spring.io/libs-snapshot' }
-}
-
-dependencyManagement {
-	imports {
-		mavenBom 'io.spring.platform:platform-bom:2.1.0.BUILD-SNAPSHOT'
-	}
+	maven { url 'https://repo.spring.io/libs-milestone' }
 }
 
 dependencies {
