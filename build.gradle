@@ -37,6 +37,7 @@ dependencies {
 
 	// Hypermedia for actuator MVC endpoints
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
+	compile 'org.springframework.boot:spring-boot-actuator-docs'
 	compile 'org.webjars:hal-browser'
 
 	// Embedded database
