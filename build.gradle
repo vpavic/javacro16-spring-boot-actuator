@@ -19,9 +19,8 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 apply plugin: 'com.gorylenko.gradle-git-properties'
 
-project.sourceCompatibility = JavaVersion.VERSION_1_8
-
-version = '0.1.0'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
 	jcenter()
@@ -32,8 +31,6 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-web'
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-security'
-
-	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
 	// Hypermedia for actuator MVC endpoints
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
