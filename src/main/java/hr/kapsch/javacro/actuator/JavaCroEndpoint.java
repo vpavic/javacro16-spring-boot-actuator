@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 
 import hr.kapsch.javacro.actuator.JavaCroEndpoint.Lecture;
 
-@Component
+// TODO 4: enable custom endpoint
+//@Component
 public class JavaCroEndpoint extends AbstractEndpoint<List<Lecture>> {
 
 	private static final List<Lecture> LECTURES = new ArrayList<>(3);

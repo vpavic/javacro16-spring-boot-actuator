@@ -11,13 +11,15 @@ buildscript {
 
 	dependencies {
 		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
-		classpath 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.16'
+		// TODO 6: enable info contributors
+		//classpath 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.16'
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-apply plugin: 'com.gorylenko.gradle-git-properties'
+// TODO 6: enable info contributors
+//apply plugin: 'com.gorylenko.gradle-git-properties'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
@@ -33,28 +35,35 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-security'
 
 	// Hypermedia for actuator MVC endpoints
-	compile 'org.springframework.boot:spring-boot-starter-hateoas'
-	compile 'org.springframework.boot:spring-boot-actuator-docs'
-	compile 'org.webjars:hal-browser'
+	// TODO 1: enable hypermedia
+	//compile 'org.springframework.boot:spring-boot-starter-hateoas'
+	// TODO 3: enable actuator docs
+	//compile 'org.springframework.boot:spring-boot-actuator-docs'
+	// TODO 2: enable HAL browser
+	//compile 'org.webjars:hal-browser'
 
 	// Embedded database
 	compile 'org.springframework.boot:spring-boot-starter-jdbc'
 	compile 'com.h2database:h2'
 
 	// Jolokia for JMX over HTTP
-	compile 'org.jolokia:jolokia-core'
+	// TODO 7: enable Jolokia
+	//compile 'org.jolokia:jolokia-core'
 
 	// Monitoring and management using a remote shell
-	compile 'org.springframework.boot:spring-boot-starter-remote-shell'
-	compile 'org.codehaus.groovy:groovy'
+	// TODO 8: enable remote shell
+	//compile 'org.springframework.boot:spring-boot-starter-remote-shell'
+	//compile 'org.codehaus.groovy:groovy'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
-processResources {
-	expand(project.properties)
-}
+// TODO 6: enable info contributors
+//processResources {
+//	expand(project.properties)
+//}
 
+// TODO 9: enable executable JAR
 //springBoot {
 //	executable = true
 //}

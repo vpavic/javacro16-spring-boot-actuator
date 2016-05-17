@@ -6,7 +6,8 @@ import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.stereotype.Component;
 
-@Component
+// TODO 7: enable Jolokia
+//@Component
 @ManagedResource
 public class JavaCroGreeterMbean {
 

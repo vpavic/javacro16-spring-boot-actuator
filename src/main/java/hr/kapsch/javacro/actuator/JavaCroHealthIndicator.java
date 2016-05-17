@@ -6,7 +6,8 @@ import org.springframework.boot.actuate.health.AbstractHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.stereotype.Component;
 
-@Component
+// TODO 5: enable custom health indicator
+//@Component
 public class JavaCroHealthIndicator extends AbstractHealthIndicator {
 
 	private static final LocalDateTime JAVA_CRO_16_START = LocalDateTime.of(2016, 5, 18, 18, 30);
