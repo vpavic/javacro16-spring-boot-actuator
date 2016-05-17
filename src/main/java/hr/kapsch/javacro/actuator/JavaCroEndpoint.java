@@ -1,7 +1,8 @@
 package hr.kapsch.javacro.actuator;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.boot.actuate.endpoint.AbstractEndpoint;
@@ -16,11 +17,11 @@ public class JavaCroEndpoint extends AbstractEndpoint<List<Lecture>> {
 
 	static {
 		LECTURES.add(new Lecture("Vedran Pavić", "Managing user's session with Spring Session",
-				LocalDateTime.of(2016, 5, 19, 12, 0), "Hall D", 30));
+				new GregorianCalendar(2016, 5, 19, 12, 0).getTime(), "Hall D", 30));
 		LECTURES.add(new Lecture("Vjeran Marčinko", "Demand-oriented web architecture",
-				LocalDateTime.of(2016, 5, 19, 12, 40), "Hall C", 30));
+				new GregorianCalendar(2016, 5, 19, 12, 40).getTime(), "Hall C", 30));
 		LECTURES.add(new Lecture("Vedran Pavić", "Meeting non-functional requirements with Spring Boot Actuator",
-				LocalDateTime.of(2016, 5, 19, 18, 0), "Hall A", 30));
+				new GregorianCalendar(2016, 5, 19, 18, 0).getTime(), "Hall A", 30));
 	}
 
 	public JavaCroEndpoint() {
@@ -32,15 +33,15 @@ public class JavaCroEndpoint extends AbstractEndpoint<List<Lecture>> {
 		return LECTURES;
 	}
 
-	public static class Lecture {
+	static class Lecture {
 
 		private String speaker;
 		private String title;
-		private LocalDateTime dateTime;
+		private Date dateTime;
 		private String room;
 		private int duration;
 
-		public Lecture(String speaker, String title, LocalDateTime dateTime, String room, int duration) {
+		Lecture(String speaker, String title, Date dateTime, String room, int duration) {
 			this.speaker = speaker;
 			this.title = title;
 			this.dateTime = dateTime;
@@ -56,7 +57,7 @@ public class JavaCroEndpoint extends AbstractEndpoint<List<Lecture>> {
 			return title;
 		}
 
-		public LocalDateTime getDateTime() {
+		public Date getDateTime() {
 			return dateTime;
 		}
 
