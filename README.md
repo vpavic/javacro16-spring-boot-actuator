@@ -1,6 +1,6 @@
 ## JavaCRO '16 - Meeting non-functional requirements with Spring Boot Actuator
 
-This repo contains demo applications to accompany [Meeting non-functional requirements with Spring Boot Actuator](http://2016.javacro.hr/eng/Program/Meeting-non-functional-requirements-with-Spring-Boot-Actuator) talk at JavaCRO '16.
+This repo contains demo applications to accompany [Meeting non-functional requirements with Spring Boot Actuator](http://2016.javacro.hr/eng/Program/Meeting-non-functional-requirements-with-Spring-Boot-Actuator) talk at JavaCRO '16. Slides are available [here](https://speakerdeck.com/vpavic/meeting-non-functional-requirements-with-spring-boot-actuator).
 
 Demo is based on Gradle and Spring Boot ```1.4.0.M3``` milestone release.
 Search the project for ```TODO``` comments to demonstrate capabilities of Spring Boot Actuator.
